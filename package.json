@@ -1,0 +1,15 @@
+{
+  "//": "Root package.json (optional) - to run client+server together",
+  "name": "flight-booking-mern",
+  "private": true,
+  "scripts": {
+    "//": "Install both client + server deps",
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "//2": "Run both in dev mode (2 terminals in one)",
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
+
