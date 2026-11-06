@@ -1,0 +1,45 @@
+{
+  "//": "Simple MERN backend (CommonJS) - Flight Booking System",
+  "name": "flight-booking-server",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "//": "dev = auto restart server (nodemon)",
+    "dev": "nodemon src/server.js",
+    "//2": "start = normal node start (used in deployment)",
+    "start": "node src/server.js",
+    "//3": "test = run jest tests",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.5.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.2.0",
+    "flight-booking-mern": "file:..",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.15.0",
+    "razorpay": "^2.9.4",
+    "socket.io": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^8.12.1",
+    "nodemon": "^3.1.7",
+    "supertest": "^7.0.0"
+  }
+}
