@@ -1,0 +1,235 @@
+/* STEP 1: basic reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+}
+
+/* STEP 2: dark theme (toggle using body.dataset.theme) */
+body[data-theme="dark"] {
+  background: #0f1115;
+  color: #f0f0f0;
+}
+
+body[data-theme="dark"] .card,
+body[data-theme="dark"] .panel,
+body[data-theme="dark"] .nav {
+  background: #171a21;
+  border-color: #2a2f3a;
+}
+
+/* STEP 3: layout helpers */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.space {
+  justify-content: space-between;
+}
+
+.center {
+  justify-content: center;
+}
+
+.gap {
+  gap: 10px;
+}
+
+.muted {
+  opacity: 0.75;
+}
+
+.small {
+  font-size: 12px;
+}
+
+/* STEP 4: navbar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links a,
+.btn-link {
+  margin-right: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.select {
+  padding: 6px 8px;
+}
+
+/* STEP 5: common UI components */
+.panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.highlight {
+  border-color: #5b8cff;
+}
+
+.pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #f0f0f0;
+}
+
+.btn.danger {
+  border-color: #ff5b5b;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* STEP 6: flight grid */
+.filters {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* STEP 7: profile avatar + upload preview */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.upload-box {
+  border: 1px dashed #ccc;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.preview {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* STEP 8: chat UI */
+.chat-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  height: 360px;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.chat-msg {
+  display: flex;
+  margin: 6px 0;
+}
+
+.chat-msg.me {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.chat-msg.me .bubble {
+  background: #d7e6ff;
+}
+
+body[data-theme="dark"] .chat-msg.me .bubble {
+  background: #25406b;
+}
+
